@@ -1,0 +1,219 @@
+﻿{% load staticfiles %}
+{% block content %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Bootstrap Admin Template : Binary Admin</title>
+	<!-- BOOTSTRAP STYLES-->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+     <!-- FONTAWESOME STYLES-->
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet" />
+     <!-- MORRIS CHART STYLES-->
+
+        <!-- CUSTOM STYLES-->
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet" />
+     <!-- GOOGLE FONTS-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+     <!-- TABLE STYLES-->
+    <link href="{% static 'js/dataTables/dataTables.bootstrap.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Binary admin</a> 
+            </div>
+  <div style="color: white;
+padding: 15px 50px 5px 50px;
+float: right;
+font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="login.html" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+        </nav>   
+           <!-- /. NAV TOP  -->
+
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper" >
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                     <h2>Enter Details</h2>
+                        <h5>Welcome {{name}}, Love to see you back. </h5>
+                       
+                    </div>
+                </div>
+                 <!-- /. ROW  -->
+                 <hr />
+               <div class="row">
+                <div class="col-md-12">
+                    <!-- Form Elements -->
+                    <div class="panel panel-default">
+                     
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <form role="form" action="../dashboard/" method="post" enctype="multipart/form-data">{% csrf_token %}
+
+                                        <div class="form-group">
+                                            <label>University and Name</label>
+                                            <input class="form-control" placeholder="Enter your university name" name="uni_name" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Contact Number</label>
+                                            <input class="form-control" placeholder="Enter your phone number" name="contact" type="tel"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Email id</label>
+                                            <input class="form-control" placeholder="Enter your email id" name="email" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Date of Birth</label>
+                                            <input class="form-control" placeholder="DOB" type="date" name="DOB"/>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label>Gender</label>
+                                             <div class="form-group">
+
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="Male" />Male
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="Female" />Female
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="Other"/>Other
+                                                </label>
+                                            </div>
+                                        </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label>Select Resume</label>
+                                            <input type="file" name="resume"/>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label>Comments on Technical Skills</label>
+                                            <textarea class="form-control" rows="3" name="techskills"></textarea>
+                                        </div>
+
+                                        <!--
+                                        <div class="form-group">
+                                            <label>Programming Language</label>
+                                          <select multiple class="form-control" name="pl">
+                                                <option value = "1">Java</option>
+                                                <option value = "2">C++</option>
+                                                <option value = "3">R</option>
+                                                <option value = "4">Python</option>
+                                                <option value = "5">PHP</option>
+                                                <option value = "6">Ruby</option>
+                                                <option value = "7">ASP.NET</option>
+                                                <option value = "8">C#</option>
+                                                <option value = "9">Other</option>
+                                            </select>
+                                        </div>
+                                           -->
+
+                                        <div class="form-group">
+                                            <label>Reviewer ID</label>
+                                            <input class="form-control" name="uni_name" />
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label>Preferred Operating System</label>
+                                          <select multiple class="form-control" name="os">
+                                                <option value = "1">Linux</option>
+                                                <option value = "2">Unix</option>
+                                                <option value = "3">Windows</option>
+                                                <option value = "4">Mac OS</option>
+                                            </select>
+                                        </div>
+
+
+                                         <div class="form-group">
+                                            <label>GPA</label>
+                                            <select class="form-control" name="gpa">
+                                                <option value="0">Select</option>
+                                                <option value="1">3.00 - 3.25</option>
+                                                <option value="2">3.26 - 3.50</option>
+                                                <option value="3">3.51 - 3.75</option>
+                                                <option value="4">3.76 - 4.00</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Visa Status</label>
+                                            <select class="form-control" name="visa">
+                                                <option value="0">Select</option>
+                                                <option value="1">J-1</option>
+                                                <option value="2">F-1</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Work Experience (years)</label>
+                                            <select class="form-control" name="workex">
+                                                <option value="0">Select</option>
+                                                <option value="1">0 - 2</option>
+                                                <option value="2">2 - 5</option>
+                                                <option value="3">5 - 10</option>
+                                                <option value="4">10+</option>
+                                            </select>
+                                        </div>
+
+
+                                        <button type="submit" class="btn btn-default">Submit Button</button>
+                                        <button type="reset" class="btn btn-primary">Reset Button</button>
+
+                                    </form>
+
+    </div>
+
+                            </div>
+                        </div>
+                    </div>
+                     <!-- End Form Elements -->
+                </div>
+            </div>
+                <!-- /. ROW  --
+                <!-- /. ROW  -->
+    </div>
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+        </div>
+     <!-- /. WRAPPER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+      <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+      <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
+    
+   
+</body>
+</html>
+{% endblock %}
